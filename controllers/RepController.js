@@ -146,6 +146,7 @@ module.exports = class RepController{
         const empresa = await getUserByToken(token) 
         let cpfResponsavel = req.get('cpfResponsavel')
         
+        
         if (!cpfResponsavel){
           return res.status(422).json({message:'Para enviar informações pro REP, a portaria 671 requer um CPF do responsavel!'})
         }

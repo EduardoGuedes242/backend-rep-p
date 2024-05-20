@@ -106,6 +106,13 @@ router.get('/buscacnpj/:cnpj',verifyToken,RepController.getRepByCNPJ)
  * /rep/edit:
  *   patch:
  *     description: Altera um Rep-p!
+ *     parameters:
+ *       - in: header
+ *         name: cpfResponsavel
+ *         schema:
+ *           type: string
+ *         required: true
+ *         description: CPF do responsável pelo cadastro.
  *     requestBody:
  *       required: true
  *       content:

@@ -8,6 +8,13 @@ const verifyToken = require('../helpers/verify-token')
  * /fun_rep/cadastrar:
  *   post:
  *     description: Cadastra um funcionario no Rep-P ou pelo CPF ou pelo PIS!
+ *     parameters:
+ *       - in: header
+ *         name: cpfResponsavel
+ *         schema:
+ *           type: string
+ *         required: true
+ *         description: CPF do operador.
  *     requestBody:
  *       required: true
  *       content:
@@ -25,12 +32,13 @@ const verifyToken = require('../helpers/verify-token')
  *       '200':
  *         description: Funcionário cadastrado no Rep-p!
  *       '500':
- *         description: Erro na tranasção com banco!
+ *         description: Erro na transação com banco!
  *       '401':
  *         description: Acesso negado!    
  *       '422':
  *         description: Erro de dados  
  */
+
 router.post('/cadastrar', verifyToken, FunRepController.cadastrar)
 /**
  * @openapi
